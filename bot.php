@@ -31,7 +31,7 @@
 		    if (!(isRepeat($p->plurk_id)))
 		    {
 			logThis($p->plurk_id);
-			print "\n\n";
+			print " AUTO REPLIED!!\n\n";
 		    }
 		    else
 			print " repeated!!\n\n";
