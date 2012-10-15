@@ -25,13 +25,13 @@
 		    print "data    = " . ($posted = date('Y-m-d\TH:i:s', strtotime($p->posted)))."\n";
 		    print "owner   = " . $p->owner_id . "\n";
 
-		    // you can change replied comment here
-		    $plurk->add_response($p->plurk_id, 'http://emos.plurk.com/4c9a44c77333900b00c75d05252dc52c_w30_h17.png 大大', 'says');
-
 		    if (!(isRepeat($p->plurk_id)))
 		    {
-			logThis($p->plurk_id);
+			// you can change replied comment here
+			$plurk->add_response($p->plurk_id, 'http://emos.plurk.com/4c9a44c77333900b00c75d05252dc52c_w30_h17.png 大大', 'says');
 			print " AUTO REPLIED!!\n\n";
+
+			logThis($p->plurk_id);
 		    }
 		    else
 			print " repeated!!\n\n";
