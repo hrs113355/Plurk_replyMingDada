@@ -20,6 +20,12 @@
 		if ($p->owner_id != DADAID)
 		    continue;
 
+		if (!((mb_strpos($p->content_raw, '.jpg', 0, 'UTF-8') !== false) ||
+			(mb_strpos($p->content_raw, '.png', 0, 'UTF-8') !== false) ||
+			    (mb_strpos($p->content_raw, '.gif', 0, 'UTF-8') !== false) ||
+			    (mb_strpos($p->content_raw, '.bmp', 0, 'UTF-8') !== false)))
+			    continue;
+
 		    print "id      = " . $p->plurk_id . "\n";
 		    print "content = " . $p->content_raw . "\n";
 		    print "data    = " . ($posted = date('Y-m-d\TH:i:s', strtotime($p->posted)))."\n";
